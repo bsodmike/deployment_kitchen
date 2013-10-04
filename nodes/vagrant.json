@@ -1,0 +1,15 @@
+{
+  "postgresql": {
+    "password": {
+      "postgres": "encryptedpassword"
+    }
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[build-essential]",
+    "recipe[vim]",
+    "recipe[openssl]",
+    "recipe[git]",
+    "recipe[postgresql::server]"
+  ]
+}

@@ -16,10 +16,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # doesn't already exist on the user's system.
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
+  VAGRANT_JSON = JSON.parse(Pathname(__FILE__).dirname.join('nodes', 'vagrant.json').read)
+
+  config.berkshelf.enabled = true
+  config.vm.provision :chef_solo do |chef|
+    chef.roles_path = "roles"
+    chef.data_bags_path = "data_bags"
+
+    # NOTE this is to get vagrant to load its node file
+    chef.run_list = VAGRANT_JSON.delete('run_list')
+    chef.json = VAGRANT_JSON
+  end
+
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 80, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.

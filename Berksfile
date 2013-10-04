@@ -2,7 +2,9 @@ site :opscode
 
 cookbook 'apt'
 cookbook 'build-essential'
-cookbook 'rbenv'
+cookbook 'openssl'
+cookbook 'vim'
+cookbook 'git'
 cookbook 'nginx'
-cookbook 'unicorn-ng'
+cookbook 'unicorn'
 cookbook 'postgresql'
