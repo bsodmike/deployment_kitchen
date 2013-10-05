@@ -38,4 +38,4 @@ $ vagrant init precise64
 ## References
 
 * http://blog.atwam.com/blog/2013/04/27/preparing-a-rails-app-for-deployment-using-chef-solo/
-*
+* http://leopard.in.ua/2013/01/04/chef-solo-getting-started-part-1/
