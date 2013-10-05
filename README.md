@@ -35,6 +35,16 @@ $ vagrant box add precise64 http://files.vagrantup.com/precise64.box
 $ vagrant init precise64
 ```
 
+## Creating a Cookbook
+
+```
+-> % knife cookbook create serverbox -C "Michael de Silva" -m "michael@mwdesilva.com" -l mit -r md
+** Creating cookbook serverbox
+** Creating README for cookbook: serverbox
+** Creating CHANGELOG for cookbook: serverbox
+** Creating metadata for cookbook: serverbox
+```
+
 ## References
 
 * http://blog.atwam.com/blog/2013/04/27/preparing-a-rails-app-for-deployment-using-chef-solo/
