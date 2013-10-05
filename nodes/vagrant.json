@@ -1,5 +1,9 @@
 {
+  "build_essential": {
+    "compiletime": true
+  },
   "run_list": [
-    "recipe[serverbox]"
+    "recipe[serverbox]",
+    "recipe[storagebox]"
   ]
 }
